@@ -150,3 +150,10 @@ function doGet(e) {
     .createTextOutput('Скрипт анкеты работает! Используйте POST для отправки данных.')
     .setMimeType(ContentService.MimeType.TEXT);
 }
+
+// Тест: открыть URL в браузере покажет что скрипт работает
+function doGet(e) {
+  return ContentService
+    .createTextOutput('Скрипт анкеты работает! Используйте POST для отправки данных.')
+    .setMimeType(ContentService.MimeType.TEXT);
+}
