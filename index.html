@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Анкета-исследование о советских фильмах и мультфильмах и их современных ремейках">
+    <title>Советское кино и ремейки — Исследование</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <div class="container">
+        <!-- Progress Bar -->
+        <div class="progress-wrapper" id="progressWrapper">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text"><span id="progressText">1 / 11</span></div>
+        </div>
+
+        <form id="surveyForm" novalidate>
+            <!-- ===== STEP 0: Welcome ===== -->
+            <div class="step active" data-step="0">
+                <div class="step-card welcome-card">
+                    <div class="welcome-icon">🎬</div>
+                    <h1>Советское кино и ремейки</h1>
+                    <p class="welcome-subtitle">Исследование восприятия</p>
+                    <div class="welcome-text">
+                        <p>Уважаемый участник анкеты!</p>
+                        <p>Приглашаем вас принять участие в исследовании, посвященном советским фильмам и мультфильмам и их современным переосмыслениям (ремейкам).</p>
+                        <p>Нам важно узнать мнение как тех, кто вырос на классике советского экрана, так и тех, кто впервые знакомится с этими историями в новых версиях XXI века.</p>
+                        <p class="note">Опрос анонимный, все данные будут использоваться только в обобщенном виде для данного проекта. Пожалуйста, выберите вариант ответа или напишите свое мнение там, где это необходимо.</p>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-start" onclick="nextStep()">
+                        Начать опрос
+                        <span class="btn-arrow">→</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ===== STEP 1: General Questions Q1-Q5 ===== -->
+            <div class="step" data-step="1">
+                <div class="step-card">
+                    <div class="step-header">
+                        <span class="step-badge">Часть 1</span>
+                        <h2>Общие вопросы</h2>
+                    </div>
+
+                    <!-- Q1 -->
+                    <div class="question-block">
+                        <label class="question-label">1. Ваш возраст:</label>
+                        <div class="radio-group" data-required="true" data-name="q1_age">
+                            <label class="radio-option">
+                                <input type="radio" name="q1_age" value="17–25 лет">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">17–25 лет</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q1_age" value="26–40 лет">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">26–40 лет</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q1_age" value="41–60 лет">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">41–60 лет</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q1_age" value="Старше 60 лет">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Старше 60 лет</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="question-block">
+                        <label class="question-label">2. Смотрите ли вы советские фильмы и мультфильмы?</label>
+                        <div class="radio-group" data-required="true" data-name="q2_watching">
+                            <label class="radio-option">
+                                <input type="radio" name="q2_watching" value="Да, регулярно">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Да, регулярно</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q2_watching" value="Время от времени">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Время от времени</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q2_watching" value="Очень редко">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Очень редко</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q2_watching" value="Не смотрю/не интересуюсь">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Не смотрю / не интересуюсь</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div class="question-block">
+                        <label class="question-label">3. Как вы относитесь к появлению современных ремейков советских фильмов и мультфильмов?</label>
+                        <p class="question-hint">Например, «Чебурашка», «Бременские музыканты», «Ну, погоди! Каникулы»</p>
+                        <div class="radio-group" data-required="true" data-name="q3_attitude">
+                            <label class="radio-option">
+                                <input type="radio" name="q3_attitude" value="Положительно">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Положительно — увидеть старые истории по-новому</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q3_attitude" value="Нейтрально">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Нейтрально, мне всё равно</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q3_attitude" value="Отрицательно">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Отрицательно, оригиналы лучше, и их не стоит трогать</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q3_attitude" value="Затрудняюсь ответить">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Затрудняюсь ответить</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q4 -->
+                    <div class="question-block">
+                        <label class="question-label">4. Считаете ли вы, что советские фильмы и мультфильмы несут в себе важные ценности (дружба, честность, патриотизм), актуальные и сегодня?</label>
+                        <div class="radio-group" data-required="true" data-name="q4_values">
+                            <label class="radio-option">
+                                <input type="radio" name="q4_values" value="Да, безусловно">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Да, безусловно</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q4_values" value="Скорее да">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Скорее да</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q4_values" value="Скорее нет">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Скорее нет, они устарели</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q4_values" value="Нет">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Нет</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q5 -->
+                    <div class="question-block">
+                        <label class="question-label">5. С какой целью сейчас чаще всего снимают ремейки советских хитов?</label>
+                        <p class="question-hint">Можно выбрать 1–2 варианта</p>
+                        <div class="checkbox-group" data-required="true" data-name="q5_purpose" data-max="2">
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q5_purpose" value="Из-за ностальгии зрителей">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">Из-за ностальгии зрителей</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q5_purpose" value="Ради коммерческой выгоды">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">Ради коммерческой выгоды (успех гарантирован за счет известного названия)</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q5_purpose" value="Познакомить молодежь">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">Чтобы познакомить молодежь со старыми историями на современном языке</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q5_purpose" value="Переосмыслить сюжеты">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">Чтобы переосмыслить старые сюжеты и добавить в них новые смыслы</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q5_purpose" value="Другое">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">Другое:</span>
+                                <input type="text" class="inline-text" name="q5_purpose_other" placeholder="Укажите...">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== STEP 2: А зори здесь тихие ===== -->
+            <div class="step" data-step="2">
+                <div class="step-card">
+                    <div class="step-header">
+                        <span class="step-badge">Часть 2 — Фильм</span>
+                        <h2>«А зори здесь тихие...»</h2>
+                        <p class="step-subtitle">Советская версия (1972) → Новая экранизация (2015)</p>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Смотрели ли вы советскую версию фильма «А зори здесь тихие...» (1972)?</label>
+                        <div class="radio-group" data-required="true" data-name="q6_old">
+                            <label class="radio-option">
+                                <input type="radio" name="q6_old" value="Да, хорошо помню">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Да, хорошо помню</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q6_old" value="Да, но смутно">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Да, но смутно</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q6_old" value="Нет">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Нет, не смотрел(а)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Смотрели ли вы новую экранизацию «А зори здесь тихие» (2015)?</label>
+                        <div class="radio-group" data-required="true" data-name="q6_new">
+                            <label class="radio-option">
+                                <input type="radio" name="q6_new" value="Да">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Да</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q6_new" value="Нет">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Нет</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Если вы смотрели обе версии, что вам понравилось больше и почему?</label>
+                        <div class="radio-group" data-name="q6_prefer">
+                            <label class="radio-option">
+                                <input type="radio" name="q6_prefer" value="Советская версия">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Советская версия</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q6_prefer" value="Новая версия">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Новая версия</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q6_prefer" value="Примерно одинаково">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Примерно одинаково</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q6_prefer" value="Не могу сравнить">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Не могу сравнить / не смотрел(а) обе</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Оцените впечатление от новой экранизации (2015):</label>
+                        <div class="rating-group" data-name="q6_rating">
+                            <label class="rating-option"><input type="radio" name="q6_rating" value="1"><span class="rating-circle">1</span></label>
+                            <label class="rating-option"><input type="radio" name="q6_rating" value="2"><span class="rating-circle">2</span></label>
+                            <label class="rating-option"><input type="radio" name="q6_rating" value="3"><span class="rating-circle">3</span></label>
+                            <label class="rating-option"><input type="radio" name="q6_rating" value="4"><span class="rating-circle">4</span></label>
+                            <label class="rating-option"><input type="radio" name="q6_rating" value="5"><span class="rating-circle">5</span></label>
+                        </div>
+                        <div class="rating-labels"><span>Совсем не понравилось</span><span>Очень понравилось</span></div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Комментарий <span class="optional">(по желанию)</span></label>
+                        <textarea name="q6_comment" class="text-area" placeholder="Что именно понравилось или не понравилось в новой версии..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== STEP 3: Мастер и Маргарита ===== -->
+            <div class="step" data-step="3">
+                <div class="step-card">
+                    <div class="step-header">
+                        <span class="step-badge">Часть 3 — Фильм</span>
+                        <h2>«Мастер и Маргарита»</h2>
+                        <p class="step-subtitle">Советские экранизации (Кара / Бортко) → Новая экранизация (2024)</p>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Смотрели ли вы советскую экранизацию романа «Мастер и Маргарита»?</label>
+                        <p class="question-hint">Например, фильм Юрия Кары или сериал Владимира Бортко</p>
+                        <div class="radio-group" data-required="true" data-name="q7_old">
+                            <label class="radio-option">
+                                <input type="radio" name="q7_old" value="Да, хорошо помню">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Да, хорошо помню</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q7_old" value="Да, но смутно">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Да, но смутно</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q7_old" value="Нет">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Нет, не смотрел(а)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Смотрели ли вы новую экранизацию «Мастер и Маргарита» (2024)?</label>
+                        <div class="radio-group" data-required="true" data-name="q7_new">
+                            <label class="radio-option">
+                                <input type="radio" name="q7_new" value="Да">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Да</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q7_new" value="Нет">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Нет</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Если вы смотрели обе версии, что вам понравилось больше и почему?</label>
+                        <div class="radio-group" data-name="q7_prefer">
+                            <label class="radio-option">
+                                <input type="radio" name="q7_prefer" value="Советская версия">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Советская версия</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q7_prefer" value="Новая версия">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Новая версия</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q7_prefer" value="Примерно одинаково">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Примерно одинаково</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q7_prefer" value="Не могу сравнить">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Не могу сравнить / не смотрел(а) советские версии</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Оцените впечатление от новой экранизации (2024):</label>
+                        <div class="rating-group" data-name="q7_rating">
+                            <label class="rating-option"><input type="radio" name="q7_rating" value="1"><span class="rating-circle">1</span></label>
+                            <label class="rating-option"><input type="radio" name="q7_rating" value="2"><span class="rating-circle">2</span></label>
+                            <label class="rating-option"><input type="radio" name="q7_rating" value="3"><span class="rating-circle">3</span></label>
+                            <label class="rating-option"><input type="radio" name="q7_rating" value="4"><span class="rating-circle">4</span></label>
+                            <label class="rating-option"><input type="radio" name="q7_rating" value="5"><span class="rating-circle">5</span></label>
+                        </div>
+                        <div class="rating-labels"><span>Совсем не понравилось</span><span>Очень понравилось</span></div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Комментарий <span class="optional">(по желанию)</span></label>
+                        <textarea name="q7_comment" class="text-area" placeholder="Что именно понравилось или не понравилось в новой версии..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== STEP 4: Москва слезам не верит ===== -->
+            <div class="step" data-step="4">
+                <div class="step-card">
+                    <div class="step-header">
+                        <span class="step-badge">Часть 4 — Фильм</span>
+                        <h2>«Москва слезам не верит»</h2>
+                        <p class="step-subtitle">Советская версия (1979) → «Москва слезам не верит. Все только начинается» (2023)</p>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Смотрели ли вы советскую версию фильма «Москва слезам не верит» (1979)?</label>
+                        <div class="radio-group" data-required="true" data-name="q8_old">
+                            <label class="radio-option">
+                                <input type="radio" name="q8_old" value="Да, хорошо помню">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Да, хорошо помню</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q8_old" value="Да, но смутно">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Да, но смутно</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q8_old" value="Нет">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Нет, не смотрел(а)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Смотрели ли вы новую версию «Москва слезам не верит. Все только начинается» (2023)?</label>
+                        <div class="radio-group" data-required="true" data-name="q8_new">
+                            <label class="radio-option">
+                                <input type="radio" name="q8_new" value="Да">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Да</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q8_new" value="Нет">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Нет</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Если вы смотрели обе версии, что вам понравилось больше и почему?</label>
+                        <div class="radio-group" data-name="q8_prefer">
+                            <label class="radio-option">
+                                <input type="radio" name="q8_prefer" value="Советская версия">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Советская версия</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q8_prefer" value="Новая версия">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Новая версия</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q8_prefer" value="Примерно одинаково">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Примерно одинаково</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q8_prefer" value="Не могу сравнить">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Не могу сравнить / не смотрел(а) обе</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Оцените впечатление от новой версии (2023):</label>
+                        <div class="rating-group" data-name="q8_rating">
+                            <label class="rating-option"><input type="radio" name="q8_rating" value="1"><span class="rating-circle">1</span></label>
+                            <label class="rating-option"><input type="radio" name="q8_rating" value="2"><span class="rating-circle">2</span></label>
+                            <label class="rating-option"><input type="radio" name="q8_rating" value="3"><span class="rating-circle">3</span></label>
+                            <label class="rating-option"><input type="radio" name="q8_rating" value="4"><span class="rating-circle">4</span></label>
+                            <label class="rating-option"><input type="radio" name="q8_rating" value="5"><span class="rating-circle">5</span></label>
+                        </div>
+                        <div class="rating-labels"><span>Совсем не понравилось</span><span>Очень понравилось</span></div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Комментарий <span class="optional">(по желанию)</span></label>
+                        <textarea name="q8_comment" class="text-area" placeholder="Что именно понравилось или не понравилось в новой версии..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== STEP 5: Ну, погоди! ===== -->
+            <div class="step" data-step="5">
+                <div class="step-card">
+                    <div class="step-header">
+                        <span class="step-badge">Часть 5 — Мультфильм</span>
+                        <h2>«Ну, погоди!»</h2>
+                        <p class="step-subtitle">Советские выпуски → «Ну, погоди! Каникулы» (2021–2022)</p>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Смотрели ли вы советские выпуски мультсериала «Ну, погоди!»?</label>
+                        <div class="radio-group" data-required="true" data-name="q9_old">
+                            <label class="radio-option">
+                                <input type="radio" name="q9_old" value="Да, хорошо помню">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Да, хорошо помню</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q9_old" value="Да, но смутно">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Да, но смутно</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q9_old" value="Нет">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Нет, не смотрел(а)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Смотрели ли вы новую версию «Ну, погоди! Каникулы» (2021–2022)?</label>
+                        <div class="radio-group" data-required="true" data-name="q9_new">
+                            <label class="radio-option">
+                                <input type="radio" name="q9_new" value="Да">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Да</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q9_new" value="Нет">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Нет</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Если вы смотрели обе версии, что вам понравилось больше и почему?</label>
+                        <div class="radio-group" data-name="q9_prefer">
+                            <label class="radio-option">
+                                <input type="radio" name="q9_prefer" value="Советская версия">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Советская версия</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q9_prefer" value="Новая версия">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Новая версия</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q9_prefer" value="Примерно одинаково">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Примерно одинаково</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q9_prefer" value="Не могу сравнить">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Не могу сравнить / не смотрел(а) обе</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Оцените впечатление от новой версии (2021–2022):</label>
+                        <div class="rating-group" data-name="q9_rating">
+                            <label class="rating-option"><input type="radio" name="q9_rating" value="1"><span class="rating-circle">1</span></label>
+                            <label class="rating-option"><input type="radio" name="q9_rating" value="2"><span class="rating-circle">2</span></label>
+                            <label class="rating-option"><input type="radio" name="q9_rating" value="3"><span class="rating-circle">3</span></label>
+                            <label class="rating-option"><input type="radio" name="q9_rating" value="4"><span class="rating-circle">4</span></label>
+                            <label class="rating-option"><input type="radio" name="q9_rating" value="5"><span class="rating-circle">5</span></label>
+                        </div>
+                        <div class="rating-labels"><span>Совсем не понравилось</span><span>Очень понравилось</span></div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Комментарий <span class="optional">(по желанию)</span></label>
+                        <textarea name="q9_comment" class="text-area" placeholder="Что именно понравилось или не понравилось в новой версии..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== STEP 6: Простоквашино ===== -->
+            <div class="step" data-step="6">
+                <div class="step-card">
+                    <div class="step-header">
+                        <span class="step-badge">Часть 6 — Мультфильм</span>
+                        <h2>«Простоквашино»</h2>
+                        <p class="step-subtitle">Советские мультфильмы → Новое «Простоквашино» (2018–2023)</p>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Смотрели ли вы советские мультфильмы о Простоквашино?</label>
+                        <div class="radio-group" data-required="true" data-name="q10_old">
+                            <label class="radio-option">
+                                <input type="radio" name="q10_old" value="Да, хорошо помню">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Да, хорошо помню</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q10_old" value="Да, но смутно">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Да, но смутно</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q10_old" value="Нет">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Нет, не смотрел(а)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Смотрели ли вы новую версию «Простоквашино» (2018–2023)?</label>
+                        <div class="radio-group" data-required="true" data-name="q10_new">
+                            <label class="radio-option">
+                                <input type="radio" name="q10_new" value="Да">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Да</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q10_new" value="Нет">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Нет</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Если вы смотрели обе версии, что вам понравилось больше и почему?</label>
+                        <div class="radio-group" data-name="q10_prefer">
+                            <label class="radio-option">
+                                <input type="radio" name="q10_prefer" value="Советская версия">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Советская версия</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q10_prefer" value="Новая версия">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Новая версия</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q10_prefer" value="Примерно одинаково">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Примерно одинаково</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q10_prefer" value="Не могу сравнить">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Не могу сравнить / не смотрел(а) обе</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Оцените впечатление от новой версии (2018–2023):</label>
+                        <div class="rating-group" data-name="q10_rating">
+                            <label class="rating-option"><input type="radio" name="q10_rating" value="1"><span class="rating-circle">1</span></label>
+                            <label class="rating-option"><input type="radio" name="q10_rating" value="2"><span class="rating-circle">2</span></label>
+                            <label class="rating-option"><input type="radio" name="q10_rating" value="3"><span class="rating-circle">3</span></label>
+                            <label class="rating-option"><input type="radio" name="q10_rating" value="4"><span class="rating-circle">4</span></label>
+                            <label class="rating-option"><input type="radio" name="q10_rating" value="5"><span class="rating-circle">5</span></label>
+                        </div>
+                        <div class="rating-labels"><span>Совсем не понравилось</span><span>Очень понравилось</span></div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Комментарий <span class="optional">(по желанию)</span></label>
+                        <textarea name="q10_comment" class="text-area" placeholder="Что именно понравилось или не понравилось в новой версии..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== STEP 7: Чебурашка ===== -->
+            <div class="step" data-step="7">
+                <div class="step-card">
+                    <div class="step-header">
+                        <span class="step-badge">Часть 7 — Мультфильм / Фильм</span>
+                        <h2>«Чебурашка»</h2>
+                        <p class="step-subtitle">Советские мультфильмы → Новый фильм «Чебурашка» (2023)</p>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Смотрели ли вы советские мультфильмы о Чебурашке и Крокодиле Гене?</label>
+                        <div class="radio-group" data-required="true" data-name="q11_old">
+                            <label class="radio-option">
+                                <input type="radio" name="q11_old" value="Да, хорошо помню">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Да, хорошо помню</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q11_old" value="Да, но смутно">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Да, но смутно</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q11_old" value="Нет">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Нет, не смотрел(а)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Смотрели ли вы новый фильм «Чебурашка» (2023)?</label>
+                        <div class="radio-group" data-required="true" data-name="q11_new">
+                            <label class="radio-option">
+                                <input type="radio" name="q11_new" value="Да">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Да</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q11_new" value="Нет">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Нет</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Если вы смотрели обе версии, что вам понравилось больше и почему?</label>
+                        <div class="radio-group" data-name="q11_prefer">
+                            <label class="radio-option">
+                                <input type="radio" name="q11_prefer" value="Советская версия">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Советская версия</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q11_prefer" value="Новая версия">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Новая версия</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q11_prefer" value="Примерно одинаково">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Примерно одинаково</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q11_prefer" value="Не могу сравнить">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Не могу сравнить / не смотрел(а) обе</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Оцените впечатление от нового фильма (2023):</label>
+                        <div class="rating-group" data-name="q11_rating">
+                            <label class="rating-option"><input type="radio" name="q11_rating" value="1"><span class="rating-circle">1</span></label>
+                            <label class="rating-option"><input type="radio" name="q11_rating" value="2"><span class="rating-circle">2</span></label>
+                            <label class="rating-option"><input type="radio" name="q11_rating" value="3"><span class="rating-circle">3</span></label>
+                            <label class="rating-option"><input type="radio" name="q11_rating" value="4"><span class="rating-circle">4</span></label>
+                            <label class="rating-option"><input type="radio" name="q11_rating" value="5"><span class="rating-circle">5</span></label>
+                        </div>
+                        <div class="rating-labels"><span>Совсем не понравилось</span><span>Очень понравилось</span></div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Комментарий <span class="optional">(по желанию)</span></label>
+                        <textarea name="q11_comment" class="text-area" placeholder="Что именно понравилось или не понравилось в новой версии..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== STEP 8: Иван Васильевич ===== -->
+            <div class="step" data-step="8">
+                <div class="step-card">
+                    <div class="step-header">
+                        <span class="step-badge">Часть 8 — Фильм</span>
+                        <h2>«Иван Васильевич меняет профессию»</h2>
+                        <p class="step-subtitle">Советский фильм (1973) → «Иван Васильевич меняет всё» (2023)</p>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Смотрели ли вы советский фильм «Иван Васильевич меняет профессию» (1973)?</label>
+                        <div class="radio-group" data-required="true" data-name="q12_old">
+                            <label class="radio-option">
+                                <input type="radio" name="q12_old" value="Да, хорошо помню">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Да, хорошо помню</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q12_old" value="Да, но смутно">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Да, но смутно</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q12_old" value="Нет">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Нет, не смотрел(а)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Смотрели ли вы новую версию «Иван Васильевич меняет всё» (2023)?</label>
+                        <div class="radio-group" data-required="true" data-name="q12_new">
+                            <label class="radio-option">
+                                <input type="radio" name="q12_new" value="Да">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Да</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q12_new" value="Нет">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Нет</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Если вы смотрели обе версии, что вам понравилось больше и почему?</label>
+                        <div class="radio-group" data-name="q12_prefer">
+                            <label class="radio-option">
+                                <input type="radio" name="q12_prefer" value="Советская версия">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Советская версия</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q12_prefer" value="Новая версия">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Новая версия</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q12_prefer" value="Примерно одинаково">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Примерно одинаково</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q12_prefer" value="Не могу сравнить">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Не могу сравнить / не смотрел(а) обе</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Оцените впечатление от новой версии (2023):</label>
+                        <div class="rating-group" data-name="q12_rating">
+                            <label class="rating-option"><input type="radio" name="q12_rating" value="1"><span class="rating-circle">1</span></label>
+                            <label class="rating-option"><input type="radio" name="q12_rating" value="2"><span class="rating-circle">2</span></label>
+                            <label class="rating-option"><input type="radio" name="q12_rating" value="3"><span class="rating-circle">3</span></label>
+                            <label class="rating-option"><input type="radio" name="q12_rating" value="4"><span class="rating-circle">4</span></label>
+                            <label class="rating-option"><input type="radio" name="q12_rating" value="5"><span class="rating-circle">5</span></label>
+                        </div>
+                        <div class="rating-labels"><span>Совсем не понравилось</span><span>Очень понравилось</span></div>
+                    </div>
+
+                    <div class="question-block">
+                        <label class="question-label">Комментарий <span class="optional">(по желанию)</span></label>
+                        <textarea name="q12_comment" class="text-area" placeholder="Что именно понравилось или не понравилось в новой версии..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== STEP 9: General Q13-Q14 ===== -->
+            <div class="step" data-step="9">
+                <div class="step-card">
+                    <div class="step-header">
+                        <span class="step-badge">Часть 9</span>
+                        <h2>Общие вопросы о восприятии</h2>
+                    </div>
+
+                    <!-- Q13 -->
+                    <div class="question-block">
+                        <label class="question-label">13. Какие основные отличия вы заметили между старыми и новыми экранизациями в целом?</label>
+                        <p class="question-hint">Выберите все подходящие варианты</p>
+                        <div class="checkbox-group" data-required="true" data-name="q13_differences">
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q13_differences" value="Визуальный стиль, графика, спецэффекты">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">Визуальный стиль, графика, спецэффекты</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q13_differences" value="Актерская игра, типажи персонажей">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">Актерская игра, типажи персонажей</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q13_differences" value="Сюжетные линии, изменения в сценарии">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">Сюжетные линии, изменения в сценарии</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q13_differences" value="Юмор, комедийная составляющая">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">Юмор, комедийная составляющая</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q13_differences" value="Музыкальное сопровождение">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">Музыкальное сопровождение</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q13_differences" value="Моральные ценности, идеи, посыл">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">Моральные ценности, идеи, посыл</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q13_differences" value="Темп повествования">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">Темп повествования</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q13_differences" value="Другое">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">Другое:</span>
+                                <input type="text" class="inline-text" name="q13_other" placeholder="Укажите...">
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q14 -->
+                    <div class="question-block">
+                        <label class="question-label">14. Как вы думаете, новые экранизации пытаются донести до зрителя те же ценности, что и оригиналы, или предлагают что‑то новое?</label>
+                        <div class="radio-group" data-required="true" data-name="q14_values">
+                            <label class="radio-option">
+                                <input type="radio" name="q14_values" value="В основном те же ценности">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">В основном те же ценности, но в современной обертке</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q14_values" value="Новые ценности">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Пытаются донести новые ценности, актуальные для нашего времени</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q14_values" value="Ценности изменились не в лучшую сторону">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Ценности сильно изменились, и это не всегда хорошо</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="q14_values" value="Ценности не ключевой элемент">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Ценности не являются ключевым элементом в новых версиях</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== STEP 10: Thank You ===== -->
+            <div class="step" data-step="10">
+                <div class="step-card thank-you-card">
+                    <div class="thank-you-icon">✨</div>
+                    <h2>Спасибо за участие!</h2>
+                    <p class="thank-you-text">Ваши ответы были успешно отправлены. Они помогут нашему исследованию о советском кино и его современных переосмыслениях.</p>
+                    <div class="thank-you-decoration">🎬🎥🎞️</div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons" id="navButtons">
+                <button type="button" class="btn btn-secondary" id="btnPrev" onclick="prevStep()" style="display:none;">
+                    <span class="btn-arrow">←</span>
+                    Назад
+                </button>
+                <button type="button" class="btn btn-primary" id="btnNext" onclick="nextStep()" style="display:none;">
+                    Далее
+                    <span class="btn-arrow">→</span>
+                </button>
+                <button type="button" class="btn btn-submit" id="btnSubmit" onclick="submitForm()" style="display:none;">
+                    Отправить ответы
+                    <span class="btn-arrow">✓</span>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>Отправляем ваши ответы...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
