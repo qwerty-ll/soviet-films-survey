@@ -112,48 +112,57 @@ function initConditionalLogic() {
     const filmQuestions = ['q6', 'q7', 'q8', 'q9', 'q10', 'q11', 'q12'];
 
     filmQuestions.forEach(prefix => {
+        const radiosOld = document.querySelectorAll(`input[name="${prefix}_old"]`);
         const radiosNew = document.querySelectorAll(`input[name="${prefix}_new"]`);
         if (radiosNew.length === 0) return;
 
-        radiosNew.forEach(radio => {
-            radio.addEventListener('change', (e) => {
-                const isNo = e.target.value === 'Нет';
+        const updateVisibility = () => {
+            const oldVal = document.querySelector(`input[name="${prefix}_old"]:checked`)?.value;
+            const newVal = document.querySelector(`input[name="${prefix}_new"]:checked`)?.value;
+            
+            const isOldNo = oldVal === 'Нет' || !oldVal;
+            const isNewNo = newVal === 'Нет' || !newVal;
 
-                // Find the follow-up question blocks
-                const preferBlock = document.querySelector(`[data-name="${prefix}_prefer"]`)?.closest('.question-block');
-                const ratingBlock = document.querySelector(`[data-name="${prefix}_rating"]`)?.closest('.question-block');
-                const commentBlock = document.querySelector(`textarea[name="${prefix}_comment"]`)?.closest('.question-block');
+            const preferBlock = document.querySelector(`[data-name="${prefix}_prefer"]`)?.closest('.question-block');
+            const ratingBlock = document.querySelector(`[data-name="${prefix}_rating"]`)?.closest('.question-block');
+            const commentBlock = document.querySelector(`textarea[name="${prefix}_comment"]`)?.closest('.question-block');
 
-                if (isNo) {
-                    // Hide follow-ups and remove required
-                    if (preferBlock) {
-                        preferBlock.style.display = 'none';
-                        preferBlock.querySelector('.radio-group').removeAttribute('data-required');
-                    }
-                    if (ratingBlock) {
-                        ratingBlock.style.display = 'none';
-                        ratingBlock.querySelector('.rating-group').removeAttribute('data-required');
-                    }
-                    if (commentBlock) {
-                        commentBlock.style.display = 'none';
-                    }
-                } else {
-                    // Show follow-ups and add required
-                    if (preferBlock) {
-                        preferBlock.style.display = 'block';
-                        // prefer is optional as per original design or required? Original: not required
-                        // preferBlock.querySelector('.radio-group').setAttribute('data-required', 'true');
-                    }
-                    if (ratingBlock) {
-                        ratingBlock.style.display = 'block';
-                        ratingBlock.querySelector('.rating-group').setAttribute('data-required', 'true');
-                    }
-                    if (commentBlock) {
-                        commentBlock.style.display = 'block';
-                    }
+            // COMPARISON logic (prefer): makes sense only if watched both
+            if (isOldNo || isNewNo) {
+                if (preferBlock) {
+                    preferBlock.style.display = 'none';
+                    preferBlock.querySelector('.radio-group').removeAttribute('data-required');
                 }
-            });
-        });
+            } else {
+                if (preferBlock) {
+                    preferBlock.style.display = 'block';
+                    // We can make it required if they saw both
+                    preferBlock.querySelector('.radio-group').setAttribute('data-required', 'true');
+                }
+            }
+
+            // RATING & COMMENT logic: makes sense only if watched NEW
+            if (isNewNo) {
+                if (ratingBlock) {
+                    ratingBlock.style.display = 'none';
+                    ratingBlock.querySelector('.rating-group').removeAttribute('data-required');
+                }
+                if (commentBlock) commentBlock.style.display = 'none';
+            } else {
+                if (ratingBlock) {
+                    ratingBlock.style.display = 'block';
+                    ratingBlock.querySelector('.rating-group').setAttribute('data-required', 'true');
+                }
+                if (commentBlock) commentBlock.style.display = 'block';
+            }
+        };
+
+        // Listen to changes on both old and new radios
+        radiosOld.forEach(r => r.addEventListener('change', updateVisibility));
+        radiosNew.forEach(r => r.addEventListener('change', updateVisibility));
+        
+        // Initial run
+        updateVisibility();
     });
 }
 
