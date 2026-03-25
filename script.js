@@ -116,12 +116,15 @@ function validateStep(stepIndex) {
         const questionBlock = group.closest('.question-block');
         const name = group.dataset.name;
 
-        // Check radio groups
-        if (group.classList.contains('radio-group')) {
+        // Check radio groups and rating groups
+        if (group.classList.contains('radio-group') || group.classList.contains('rating-group')) {
             const checked = group.querySelector('input[type="radio"]:checked');
             if (!checked) {
                 questionBlock.classList.add('has-error');
-                showError(questionBlock, 'Пожалуйста, выберите один вариант');
+                const msg = group.classList.contains('rating-group')
+                    ? 'Пожалуйста, поставьте оценку'
+                    : 'Пожалуйста, выберите один вариант';
+                showError(questionBlock, msg);
                 isValid = false;
             } else {
                 questionBlock.classList.remove('has-error');
