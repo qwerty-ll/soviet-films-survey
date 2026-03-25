@@ -194,12 +194,12 @@ body {
     height: 100vh;
     background-size: cover;
     background-position: center;
-    filter: blur(60px);
+    filter: blur(20px);
     opacity: 0;
     z-index: 0;
     transition: background-image 0.8s ease, opacity 0.8s ease;
     pointer-events: none;
-    transform: scale(1.1); /* Prevent blur edges from showing */
+    transform: scale(1.05); /* Prevent blur edges from showing */
 }
 
 /* ===== Film Step Header with Vertical Poster ===== */

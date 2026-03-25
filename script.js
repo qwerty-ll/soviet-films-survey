@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateNavButtons();
     updateProgress();
     initCheckboxLimits();
+    initConditionalLogic();
 });
 
 // ===== Step Navigation =====
@@ -112,7 +113,7 @@ function updateProgress() {
         if (currentEl.querySelector('.step-card-film')?.hasAttribute('data-bg')) {
             const bgSrc = currentEl.querySelector('.step-card-film').getAttribute('data-bg');
             pageBgBlur.style.backgroundImage = `url('${bgSrc}')`;
-            pageBgBlur.style.opacity = '0.35';
+            pageBgBlur.style.opacity = '0.2';
         } else {
             pageBgBlur.style.opacity = '0';
         }
