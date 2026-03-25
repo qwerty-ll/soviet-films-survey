@@ -1,5 +1,7 @@
 /* ===== CSS Reset & Base ===== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -73,13 +75,27 @@ body {
 }
 
 @keyframes glowFloat1 {
-    0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(-40px, 40px); }
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-40px, 40px);
+    }
 }
 
 @keyframes glowFloat2 {
-    0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(40px, -30px); }
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(40px, -30px);
+    }
 }
 
 /* ===== Container ===== */
@@ -140,6 +156,7 @@ body {
         opacity: 0;
         transform: translateY(24px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -151,6 +168,7 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+
     to {
         opacity: 0;
         transform: translateY(-24px);
@@ -180,8 +198,15 @@ body {
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.08); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
 }
 
 .welcome-card h1 {
@@ -357,11 +382,11 @@ body {
     transition: transform var(--transition-bounce);
 }
 
-.radio-option input:checked ~ .radio-custom {
+.radio-option input:checked~.radio-custom {
     border-color: var(--accent-gold);
 }
 
-.radio-option input:checked ~ .radio-custom::after {
+.radio-option input:checked~.radio-custom::after {
     transform: translate(-50%, -50%) scale(1);
 }
 
@@ -406,12 +431,12 @@ body {
     transition: transform var(--transition-bounce);
 }
 
-.checkbox-option input:checked ~ .checkbox-custom {
+.checkbox-option input:checked~.checkbox-custom {
     background: var(--accent-gold);
     border-color: var(--accent-gold);
 }
 
-.checkbox-option input:checked ~ .checkbox-custom::after {
+.checkbox-option input:checked~.checkbox-custom::after {
     transform: translate(-50%, -50%) scale(1);
 }
 
@@ -477,7 +502,7 @@ body {
     transform: translateY(-2px);
 }
 
-.rating-option input:checked ~ .rating-circle {
+.rating-option input:checked~.rating-circle {
     background: var(--accent-gold);
     border-color: var(--accent-gold);
     color: var(--bg-primary);
@@ -688,7 +713,9 @@ body {
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .loading-overlay p {

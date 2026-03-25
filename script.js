@@ -106,6 +106,57 @@ function updateProgress() {
     progressText.textContent = `${currentStep} / ${TOTAL_STEPS - 1}`;
 }
 
+// ===== Conditional Logic for Film Questions =====
+function initConditionalLogic() {
+    // Array of base names for film questions
+    const filmQuestions = ['q6', 'q7', 'q8', 'q9', 'q10', 'q11', 'q12'];
+
+    filmQuestions.forEach(prefix => {
+        const radiosNew = document.querySelectorAll(`input[name="${prefix}_new"]`);
+        if (radiosNew.length === 0) return;
+
+        radiosNew.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                const isNo = e.target.value === 'Нет';
+
+                // Find the follow-up question blocks
+                const preferBlock = document.querySelector(`[data-name="${prefix}_prefer"]`)?.closest('.question-block');
+                const ratingBlock = document.querySelector(`[data-name="${prefix}_rating"]`)?.closest('.question-block');
+                const commentBlock = document.querySelector(`textarea[name="${prefix}_comment"]`)?.closest('.question-block');
+
+                if (isNo) {
+                    // Hide follow-ups and remove required
+                    if (preferBlock) {
+                        preferBlock.style.display = 'none';
+                        preferBlock.querySelector('.radio-group').removeAttribute('data-required');
+                    }
+                    if (ratingBlock) {
+                        ratingBlock.style.display = 'none';
+                        ratingBlock.querySelector('.rating-group').removeAttribute('data-required');
+                    }
+                    if (commentBlock) {
+                        commentBlock.style.display = 'none';
+                    }
+                } else {
+                    // Show follow-ups and add required
+                    if (preferBlock) {
+                        preferBlock.style.display = 'block';
+                        // prefer is optional as per original design or required? Original: not required
+                        // preferBlock.querySelector('.radio-group').setAttribute('data-required', 'true');
+                    }
+                    if (ratingBlock) {
+                        ratingBlock.style.display = 'block';
+                        ratingBlock.querySelector('.rating-group').setAttribute('data-required', 'true');
+                    }
+                    if (commentBlock) {
+                        commentBlock.style.display = 'block';
+                    }
+                }
+            });
+        });
+    });
+}
+
 // ===== Validation =====
 function validateStep(stepIndex) {
     const stepEl = steps[stepIndex];
@@ -206,58 +257,58 @@ function initCheckboxLimits() {
 
 // ===== Column name mapping (field → readable header) =====
 const COLUMN_MAP = {
-    'q1_age':            '1. Ваш возраст',
-    'q2_watching':       '2. Смотрите ли советские фильмы?',
-    'q3_attitude':       '3. Отношение к ремейкам',
-    'q4_values':         '4. Ценности советского кино актуальны?',
-    'q5_purpose':        '5. Цель создания ремейков',
-    'q5_purpose_other':  '5. Другое (уточнение)',
+    'q1_age': '1. Ваш возраст',
+    'q2_watching': '2. Смотрите ли советские фильмы?',
+    'q3_attitude': '3. Отношение к ремейкам',
+    'q4_values': '4. Ценности советского кино актуальны?',
+    'q5_purpose': '5. Цель создания ремейков',
+    'q5_purpose_other': '5. Другое (уточнение)',
 
-    'q6_old':      '6. «А зори здесь тихие» — советская версия',
-    'q6_new':      '6. «А зори здесь тихие» — новая версия',
-    'q6_prefer':   '6. «А зори здесь тихие» — что понравилось больше',
-    'q6_rating':   '6. «А зори здесь тихие» — оценка (1-5)',
-    'q6_comment':  '6. «А зори здесь тихие» — комментарий',
+    'q6_old': '6. «А зори здесь тихие» — советская версия',
+    'q6_new': '6. «А зори здесь тихие» — новая версия',
+    'q6_prefer': '6. «А зори здесь тихие» — что понравилось больше',
+    'q6_rating': '6. «А зори здесь тихие» — оценка (1-5)',
+    'q6_comment': '6. «А зори здесь тихие» — комментарий',
 
-    'q7_old':      '7. «Мастер и Маргарита» — советская версия',
-    'q7_new':      '7. «Мастер и Маргарита» — новая версия',
-    'q7_prefer':   '7. «Мастер и Маргарита» — что понравилось больше',
-    'q7_rating':   '7. «Мастер и Маргарита» — оценка (1-5)',
-    'q7_comment':  '7. «Мастер и Маргарита» — комментарий',
+    'q7_old': '7. «Мастер и Маргарита» — советская версия',
+    'q7_new': '7. «Мастер и Маргарита» — новая версия',
+    'q7_prefer': '7. «Мастер и Маргарита» — что понравилось больше',
+    'q7_rating': '7. «Мастер и Маргарита» — оценка (1-5)',
+    'q7_comment': '7. «Мастер и Маргарита» — комментарий',
 
-    'q8_old':      '8. «Москва слезам не верит» — советская версия',
-    'q8_new':      '8. «Москва слезам не верит» — новая версия',
-    'q8_prefer':   '8. «Москва слезам не верит» — что понравилось больше',
-    'q8_rating':   '8. «Москва слезам не верит» — оценка (1-5)',
-    'q8_comment':  '8. «Москва слезам не верит» — комментарий',
+    'q8_old': '8. «Москва слезам не верит» — советская версия',
+    'q8_new': '8. «Москва слезам не верит» — новая версия',
+    'q8_prefer': '8. «Москва слезам не верит» — что понравилось больше',
+    'q8_rating': '8. «Москва слезам не верит» — оценка (1-5)',
+    'q8_comment': '8. «Москва слезам не верит» — комментарий',
 
-    'q9_old':      '9. «Ну, погоди!» — советская версия',
-    'q9_new':      '9. «Ну, погоди!» — новая версия',
-    'q9_prefer':   '9. «Ну, погоди!» — что понравилось больше',
-    'q9_rating':   '9. «Ну, погоди!» — оценка (1-5)',
-    'q9_comment':  '9. «Ну, погоди!» — комментарий',
+    'q9_old': '9. «Ну, погоди!» — советская версия',
+    'q9_new': '9. «Ну, погоди!» — новая версия',
+    'q9_prefer': '9. «Ну, погоди!» — что понравилось больше',
+    'q9_rating': '9. «Ну, погоди!» — оценка (1-5)',
+    'q9_comment': '9. «Ну, погоди!» — комментарий',
 
-    'q10_old':     '10. «Простоквашино» — советская версия',
-    'q10_new':     '10. «Простоквашино» — новая версия',
-    'q10_prefer':  '10. «Простоквашино» — что понравилось больше',
-    'q10_rating':  '10. «Простоквашино» — оценка (1-5)',
+    'q10_old': '10. «Простоквашино» — советская версия',
+    'q10_new': '10. «Простоквашино» — новая версия',
+    'q10_prefer': '10. «Простоквашино» — что понравилось больше',
+    'q10_rating': '10. «Простоквашино» — оценка (1-5)',
     'q10_comment': '10. «Простоквашино» — комментарий',
 
-    'q11_old':     '11. «Чебурашка» — советская версия',
-    'q11_new':     '11. «Чебурашка» — новая версия',
-    'q11_prefer':  '11. «Чебурашка» — что понравилось больше',
-    'q11_rating':  '11. «Чебурашка» — оценка (1-5)',
+    'q11_old': '11. «Чебурашка» — советская версия',
+    'q11_new': '11. «Чебурашка» — новая версия',
+    'q11_prefer': '11. «Чебурашка» — что понравилось больше',
+    'q11_rating': '11. «Чебурашка» — оценка (1-5)',
     'q11_comment': '11. «Чебурашка» — комментарий',
 
-    'q12_old':     '12. «Иван Васильевич» — советская версия',
-    'q12_new':     '12. «Иван Васильевич» — новая версия',
-    'q12_prefer':  '12. «Иван Васильевич» — что понравилось больше',
-    'q12_rating':  '12. «Иван Васильевич» — оценка (1-5)',
+    'q12_old': '12. «Иван Васильевич» — советская версия',
+    'q12_new': '12. «Иван Васильевич» — новая версия',
+    'q12_prefer': '12. «Иван Васильевич» — что понравилось больше',
+    'q12_rating': '12. «Иван Васильевич» — оценка (1-5)',
     'q12_comment': '12. «Иван Васильевич» — комментарий',
 
-    'q13_differences':  '13. Отличия старых и новых версий',
-    'q13_other':        '13. Другое (уточнение)',
-    'q14_values':       '14. Ценности в новых экранизациях',
+    'q13_differences': '13. Отличия старых и новых версий',
+    'q13_other': '13. Другое (уточнение)',
+    'q14_values': '14. Ценности в новых экранизациях',
 };
 
 // ===== Data Collection =====

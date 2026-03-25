@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="bg-glow bg-glow-1"></div>
     <div class="bg-glow bg-glow-2"></div>
@@ -32,9 +34,13 @@
                     <p class="welcome-subtitle">Исследование восприятия</p>
                     <div class="welcome-text">
                         <p>Уважаемый участник анкеты!</p>
-                        <p>Приглашаем вас принять участие в исследовании, посвященном советским фильмам и мультфильмам и их современным переосмыслениям (ремейкам).</p>
-                        <p>Нам важно узнать мнение как тех, кто вырос на классике советского экрана, так и тех, кто впервые знакомится с этими историями в новых версиях XXI века.</p>
-                        <p class="note">Опрос анонимный, все данные будут использоваться только в обобщенном виде для данного проекта. Пожалуйста, выберите вариант ответа или напишите свое мнение там, где это необходимо.</p>
+                        <p>Приглашаем вас принять участие в исследовании, посвященном советским фильмам и мультфильмам и
+                            их современным переосмыслениям (ремейкам).</p>
+                        <p>Нам важно узнать мнение как тех, кто вырос на классике советского экрана, так и тех, кто
+                            впервые знакомится с этими историями в новых версиях XXI века.</p>
+                        <p class="note">Опрос анонимный, все данные будут использоваться только в обобщенном виде для
+                            данного проекта. Пожалуйста, выберите вариант ответа или напишите свое мнение там, где это
+                            необходимо.</p>
                     </div>
                     <button type="button" class="btn btn-primary btn-start" onclick="nextStep()">
                         Начать опрос
@@ -107,8 +113,10 @@
 
                     <!-- Q3 -->
                     <div class="question-block">
-                        <label class="question-label">3. Как вы относитесь к появлению современных ремейков советских фильмов и мультфильмов?</label>
-                        <p class="question-hint">Например, «Чебурашка», «Бременские музыканты», «Ну, погоди! Каникулы»</p>
+                        <label class="question-label">3. Как вы относитесь к появлению современных ремейков советских
+                            фильмов и мультфильмов?</label>
+                        <p class="question-hint">Например, «Чебурашка», «Бременские музыканты», «Ну, погоди! Каникулы»
+                        </p>
                         <div class="radio-group" data-required="true" data-name="q3_attitude">
                             <label class="radio-option">
                                 <input type="radio" name="q3_attitude" value="Положительно">
@@ -135,7 +143,8 @@
 
                     <!-- Q4 -->
                     <div class="question-block">
-                        <label class="question-label">4. Считаете ли вы, что советские фильмы и мультфильмы несут в себе важные ценности (дружба, честность, патриотизм), актуальные и сегодня?</label>
+                        <label class="question-label">4. Считаете ли вы, что советские фильмы и мультфильмы несут в себе
+                            важные ценности (дружба, честность, патриотизм), актуальные и сегодня?</label>
                         <div class="radio-group" data-required="true" data-name="q4_values">
                             <label class="radio-option">
                                 <input type="radio" name="q4_values" value="Да, безусловно">
@@ -162,7 +171,8 @@
 
                     <!-- Q5 -->
                     <div class="question-block">
-                        <label class="question-label">5. С какой целью сейчас чаще всего снимают ремейки советских хитов?</label>
+                        <label class="question-label">5. С какой целью сейчас чаще всего снимают ремейки советских
+                            хитов?</label>
                         <p class="question-hint">Можно выбрать 1–2 варианта</p>
                         <div class="checkbox-group" data-required="true" data-name="q5_purpose" data-max="2">
                             <label class="checkbox-option">
@@ -173,17 +183,20 @@
                             <label class="checkbox-option">
                                 <input type="checkbox" name="q5_purpose" value="Ради коммерческой выгоды">
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-text">Ради коммерческой выгоды (успех гарантирован за счет известного названия)</span>
+                                <span class="checkbox-text">Ради коммерческой выгоды (успех гарантирован за счет
+                                    известного названия)</span>
                             </label>
                             <label class="checkbox-option">
                                 <input type="checkbox" name="q5_purpose" value="Познакомить молодежь">
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-text">Чтобы познакомить молодежь со старыми историями на современном языке</span>
+                                <span class="checkbox-text">Чтобы познакомить молодежь со старыми историями на
+                                    современном языке</span>
                             </label>
                             <label class="checkbox-option">
                                 <input type="checkbox" name="q5_purpose" value="Переосмыслить сюжеты">
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-text">Чтобы переосмыслить старые сюжеты и добавить в них новые смыслы</span>
+                                <span class="checkbox-text">Чтобы переосмыслить старые сюжеты и добавить в них новые
+                                    смыслы</span>
                             </label>
                             <label class="checkbox-option">
                                 <input type="checkbox" name="q5_purpose" value="Другое">
@@ -206,7 +219,8 @@
                     </div>
 
                     <div class="question-block">
-                        <label class="question-label">Смотрели ли вы советскую версию фильма «А зори здесь тихие...» (1972)?</label>
+                        <label class="question-label">Смотрели ли вы советскую версию фильма «А зори здесь тихие...»
+                            (1972)?</label>
                         <div class="radio-group" data-required="true" data-name="q6_old">
                             <label class="radio-option">
                                 <input type="radio" name="q6_old" value="Да, хорошо помню">
@@ -227,7 +241,8 @@
                     </div>
 
                     <div class="question-block">
-                        <label class="question-label">Смотрели ли вы новую экранизацию «А зори здесь тихие» (2015)?</label>
+                        <label class="question-label">Смотрели ли вы новую экранизацию «А зори здесь тихие»
+                            (2015)?</label>
                         <div class="radio-group" data-required="true" data-name="q6_new">
                             <label class="radio-option">
                                 <input type="radio" name="q6_new" value="Да">
@@ -243,7 +258,8 @@
                     </div>
 
                     <div class="question-block">
-                        <label class="question-label">Если вы смотрели обе версии, что вам понравилось больше и почему?</label>
+                        <label class="question-label">Если вы смотрели обе версии, что вам понравилось больше и
+                            почему?</label>
                         <div class="radio-group" data-required="true" data-name="q6_prefer">
                             <label class="radio-option">
                                 <input type="radio" name="q6_prefer" value="Советская версия">
@@ -271,18 +287,25 @@
                     <div class="question-block">
                         <label class="question-label">Оцените впечатление от новой экранизации (2015):</label>
                         <div class="rating-group" data-required="true" data-name="q6_rating">
-                            <label class="rating-option"><input type="radio" name="q6_rating" value="1"><span class="rating-circle">1</span></label>
-                            <label class="rating-option"><input type="radio" name="q6_rating" value="2"><span class="rating-circle">2</span></label>
-                            <label class="rating-option"><input type="radio" name="q6_rating" value="3"><span class="rating-circle">3</span></label>
-                            <label class="rating-option"><input type="radio" name="q6_rating" value="4"><span class="rating-circle">4</span></label>
-                            <label class="rating-option"><input type="radio" name="q6_rating" value="5"><span class="rating-circle">5</span></label>
+                            <label class="rating-option"><input type="radio" name="q6_rating" value="1"><span
+                                    class="rating-circle">1</span></label>
+                            <label class="rating-option"><input type="radio" name="q6_rating" value="2"><span
+                                    class="rating-circle">2</span></label>
+                            <label class="rating-option"><input type="radio" name="q6_rating" value="3"><span
+                                    class="rating-circle">3</span></label>
+                            <label class="rating-option"><input type="radio" name="q6_rating" value="4"><span
+                                    class="rating-circle">4</span></label>
+                            <label class="rating-option"><input type="radio" name="q6_rating" value="5"><span
+                                    class="rating-circle">5</span></label>
                         </div>
-                        <div class="rating-labels"><span>Совсем не понравилось</span><span>Очень понравилось</span></div>
+                        <div class="rating-labels"><span>Совсем не понравилось</span><span>Очень понравилось</span>
+                        </div>
                     </div>
 
                     <div class="question-block">
                         <label class="question-label">Комментарий <span class="optional">(по желанию)</span></label>
-                        <textarea name="q6_comment" class="text-area" placeholder="Что именно понравилось или не понравилось в новой версии..."></textarea>
+                        <textarea name="q6_comment" class="text-area"
+                            placeholder="Что именно понравилось или не понравилось в новой версии..."></textarea>
                     </div>
                 </div>
             </div>
@@ -297,7 +320,8 @@
                     </div>
 
                     <div class="question-block">
-                        <label class="question-label">Смотрели ли вы советскую экранизацию романа «Мастер и Маргарита»?</label>
+                        <label class="question-label">Смотрели ли вы советскую экранизацию романа «Мастер и
+                            Маргарита»?</label>
                         <p class="question-hint">Например, фильм Юрия Кары или сериал Владимира Бортко</p>
                         <div class="radio-group" data-required="true" data-name="q7_old">
                             <label class="radio-option">
@@ -319,7 +343,8 @@
                     </div>
 
                     <div class="question-block">
-                        <label class="question-label">Смотрели ли вы новую экранизацию «Мастер и Маргарита» (2024)?</label>
+                        <label class="question-label">Смотрели ли вы новую экранизацию «Мастер и Маргарита»
+                            (2024)?</label>
                         <div class="radio-group" data-required="true" data-name="q7_new">
                             <label class="radio-option">
                                 <input type="radio" name="q7_new" value="Да">
@@ -335,7 +360,8 @@
                     </div>
 
                     <div class="question-block">
-                        <label class="question-label">Если вы смотрели обе версии, что вам понравилось больше и почему?</label>
+                        <label class="question-label">Если вы смотрели обе версии, что вам понравилось больше и
+                            почему?</label>
                         <div class="radio-group" data-required="true" data-name="q7_prefer">
                             <label class="radio-option">
                                 <input type="radio" name="q7_prefer" value="Советская версия">
@@ -363,18 +389,25 @@
                     <div class="question-block">
                         <label class="question-label">Оцените впечатление от новой экранизации (2024):</label>
                         <div class="rating-group" data-required="true" data-name="q7_rating">
-                            <label class="rating-option"><input type="radio" name="q7_rating" value="1"><span class="rating-circle">1</span></label>
-                            <label class="rating-option"><input type="radio" name="q7_rating" value="2"><span class="rating-circle">2</span></label>
-                            <label class="rating-option"><input type="radio" name="q7_rating" value="3"><span class="rating-circle">3</span></label>
-                            <label class="rating-option"><input type="radio" name="q7_rating" value="4"><span class="rating-circle">4</span></label>
-                            <label class="rating-option"><input type="radio" name="q7_rating" value="5"><span class="rating-circle">5</span></label>
+                            <label class="rating-option"><input type="radio" name="q7_rating" value="1"><span
+                                    class="rating-circle">1</span></label>
+                            <label class="rating-option"><input type="radio" name="q7_rating" value="2"><span
+                                    class="rating-circle">2</span></label>
+                            <label class="rating-option"><input type="radio" name="q7_rating" value="3"><span
+                                    class="rating-circle">3</span></label>
+                            <label class="rating-option"><input type="radio" name="q7_rating" value="4"><span
+                                    class="rating-circle">4</span></label>
+                            <label class="rating-option"><input type="radio" name="q7_rating" value="5"><span
+                                    class="rating-circle">5</span></label>
                         </div>
-                        <div class="rating-labels"><span>Совсем не понравилось</span><span>Очень понравилось</span></div>
+                        <div class="rating-labels"><span>Совсем не понравилось</span><span>Очень понравилось</span>
+                        </div>
                     </div>
 
                     <div class="question-block">
                         <label class="question-label">Комментарий <span class="optional">(по желанию)</span></label>
-                        <textarea name="q7_comment" class="text-area" placeholder="Что именно понравилось или не понравилось в новой версии..."></textarea>
+                        <textarea name="q7_comment" class="text-area"
+                            placeholder="Что именно понравилось или не понравилось в новой версии..."></textarea>
                     </div>
                 </div>
             </div>
@@ -385,11 +418,13 @@
                     <div class="step-header">
                         <span class="step-badge">Часть 4 — Фильм</span>
                         <h2>«Москва слезам не верит»</h2>
-                        <p class="step-subtitle">Советская версия (1979) → «Москва слезам не верит. Все только начинается» (2023)</p>
+                        <p class="step-subtitle">Советская версия (1979) → «Москва слезам не верит. Все только
+                            начинается» (2023)</p>
                     </div>
 
                     <div class="question-block">
-                        <label class="question-label">Смотрели ли вы советскую версию фильма «Москва слезам не верит» (1979)?</label>
+                        <label class="question-label">Смотрели ли вы советскую версию фильма «Москва слезам не верит»
+                            (1979)?</label>
                         <div class="radio-group" data-required="true" data-name="q8_old">
                             <label class="radio-option">
                                 <input type="radio" name="q8_old" value="Да, хорошо помню">
@@ -410,7 +445,8 @@
                     </div>
 
                     <div class="question-block">
-                        <label class="question-label">Смотрели ли вы новую версию «Москва слезам не верит. Все только начинается» (2023)?</label>
+                        <label class="question-label">Смотрели ли вы новую версию «Москва слезам не верит. Все только
+                            начинается» (2023)?</label>
                         <div class="radio-group" data-required="true" data-name="q8_new">
                             <label class="radio-option">
                                 <input type="radio" name="q8_new" value="Да">
@@ -426,7 +462,8 @@
                     </div>
 
                     <div class="question-block">
-                        <label class="question-label">Если вы смотрели обе версии, что вам понравилось больше и почему?</label>
+                        <label class="question-label">Если вы смотрели обе версии, что вам понравилось больше и
+                            почему?</label>
                         <div class="radio-group" data-required="true" data-name="q8_prefer">
                             <label class="radio-option">
                                 <input type="radio" name="q8_prefer" value="Советская версия">
@@ -454,18 +491,25 @@
                     <div class="question-block">
                         <label class="question-label">Оцените впечатление от новой версии (2023):</label>
                         <div class="rating-group" data-required="true" data-name="q8_rating">
-                            <label class="rating-option"><input type="radio" name="q8_rating" value="1"><span class="rating-circle">1</span></label>
-                            <label class="rating-option"><input type="radio" name="q8_rating" value="2"><span class="rating-circle">2</span></label>
-                            <label class="rating-option"><input type="radio" name="q8_rating" value="3"><span class="rating-circle">3</span></label>
-                            <label class="rating-option"><input type="radio" name="q8_rating" value="4"><span class="rating-circle">4</span></label>
-                            <label class="rating-option"><input type="radio" name="q8_rating" value="5"><span class="rating-circle">5</span></label>
+                            <label class="rating-option"><input type="radio" name="q8_rating" value="1"><span
+                                    class="rating-circle">1</span></label>
+                            <label class="rating-option"><input type="radio" name="q8_rating" value="2"><span
+                                    class="rating-circle">2</span></label>
+                            <label class="rating-option"><input type="radio" name="q8_rating" value="3"><span
+                                    class="rating-circle">3</span></label>
+                            <label class="rating-option"><input type="radio" name="q8_rating" value="4"><span
+                                    class="rating-circle">4</span></label>
+                            <label class="rating-option"><input type="radio" name="q8_rating" value="5"><span
+                                    class="rating-circle">5</span></label>
                         </div>
-                        <div class="rating-labels"><span>Совсем не понравилось</span><span>Очень понравилось</span></div>
+                        <div class="rating-labels"><span>Совсем не понравилось</span><span>Очень понравилось</span>
+                        </div>
                     </div>
 
                     <div class="question-block">
                         <label class="question-label">Комментарий <span class="optional">(по желанию)</span></label>
-                        <textarea name="q8_comment" class="text-area" placeholder="Что именно понравилось или не понравилось в новой версии..."></textarea>
+                        <textarea name="q8_comment" class="text-area"
+                            placeholder="Что именно понравилось или не понравилось в новой версии..."></textarea>
                     </div>
                 </div>
             </div>
@@ -480,7 +524,8 @@
                     </div>
 
                     <div class="question-block">
-                        <label class="question-label">Смотрели ли вы советские выпуски мультсериала «Ну, погоди!»?</label>
+                        <label class="question-label">Смотрели ли вы советские выпуски мультсериала «Ну,
+                            погоди!»?</label>
                         <div class="radio-group" data-required="true" data-name="q9_old">
                             <label class="radio-option">
                                 <input type="radio" name="q9_old" value="Да, хорошо помню">
@@ -501,7 +546,8 @@
                     </div>
 
                     <div class="question-block">
-                        <label class="question-label">Смотрели ли вы новую версию «Ну, погоди! Каникулы» (2021–2022)?</label>
+                        <label class="question-label">Смотрели ли вы новую версию «Ну, погоди! Каникулы»
+                            (2021–2022)?</label>
                         <div class="radio-group" data-required="true" data-name="q9_new">
                             <label class="radio-option">
                                 <input type="radio" name="q9_new" value="Да">
@@ -517,7 +563,8 @@
                     </div>
 
                     <div class="question-block">
-                        <label class="question-label">Если вы смотрели обе версии, что вам понравилось больше и почему?</label>
+                        <label class="question-label">Если вы смотрели обе версии, что вам понравилось больше и
+                            почему?</label>
                         <div class="radio-group" data-required="true" data-name="q9_prefer">
                             <label class="radio-option">
                                 <input type="radio" name="q9_prefer" value="Советская версия">
@@ -545,18 +592,25 @@
                     <div class="question-block">
                         <label class="question-label">Оцените впечатление от новой версии (2021–2022):</label>
                         <div class="rating-group" data-required="true" data-name="q9_rating">
-                            <label class="rating-option"><input type="radio" name="q9_rating" value="1"><span class="rating-circle">1</span></label>
-                            <label class="rating-option"><input type="radio" name="q9_rating" value="2"><span class="rating-circle">2</span></label>
-                            <label class="rating-option"><input type="radio" name="q9_rating" value="3"><span class="rating-circle">3</span></label>
-                            <label class="rating-option"><input type="radio" name="q9_rating" value="4"><span class="rating-circle">4</span></label>
-                            <label class="rating-option"><input type="radio" name="q9_rating" value="5"><span class="rating-circle">5</span></label>
+                            <label class="rating-option"><input type="radio" name="q9_rating" value="1"><span
+                                    class="rating-circle">1</span></label>
+                            <label class="rating-option"><input type="radio" name="q9_rating" value="2"><span
+                                    class="rating-circle">2</span></label>
+                            <label class="rating-option"><input type="radio" name="q9_rating" value="3"><span
+                                    class="rating-circle">3</span></label>
+                            <label class="rating-option"><input type="radio" name="q9_rating" value="4"><span
+                                    class="rating-circle">4</span></label>
+                            <label class="rating-option"><input type="radio" name="q9_rating" value="5"><span
+                                    class="rating-circle">5</span></label>
                         </div>
-                        <div class="rating-labels"><span>Совсем не понравилось</span><span>Очень понравилось</span></div>
+                        <div class="rating-labels"><span>Совсем не понравилось</span><span>Очень понравилось</span>
+                        </div>
                     </div>
 
                     <div class="question-block">
                         <label class="question-label">Комментарий <span class="optional">(по желанию)</span></label>
-                        <textarea name="q9_comment" class="text-area" placeholder="Что именно понравилось или не понравилось в новой версии..."></textarea>
+                        <textarea name="q9_comment" class="text-area"
+                            placeholder="Что именно понравилось или не понравилось в новой версии..."></textarea>
                     </div>
                 </div>
             </div>
@@ -608,7 +662,8 @@
                     </div>
 
                     <div class="question-block">
-                        <label class="question-label">Если вы смотрели обе версии, что вам понравилось больше и почему?</label>
+                        <label class="question-label">Если вы смотрели обе версии, что вам понравилось больше и
+                            почему?</label>
                         <div class="radio-group" data-required="true" data-name="q10_prefer">
                             <label class="radio-option">
                                 <input type="radio" name="q10_prefer" value="Советская версия">
@@ -636,18 +691,25 @@
                     <div class="question-block">
                         <label class="question-label">Оцените впечатление от новой версии (2018–2023):</label>
                         <div class="rating-group" data-required="true" data-name="q10_rating">
-                            <label class="rating-option"><input type="radio" name="q10_rating" value="1"><span class="rating-circle">1</span></label>
-                            <label class="rating-option"><input type="radio" name="q10_rating" value="2"><span class="rating-circle">2</span></label>
-                            <label class="rating-option"><input type="radio" name="q10_rating" value="3"><span class="rating-circle">3</span></label>
-                            <label class="rating-option"><input type="radio" name="q10_rating" value="4"><span class="rating-circle">4</span></label>
-                            <label class="rating-option"><input type="radio" name="q10_rating" value="5"><span class="rating-circle">5</span></label>
+                            <label class="rating-option"><input type="radio" name="q10_rating" value="1"><span
+                                    class="rating-circle">1</span></label>
+                            <label class="rating-option"><input type="radio" name="q10_rating" value="2"><span
+                                    class="rating-circle">2</span></label>
+                            <label class="rating-option"><input type="radio" name="q10_rating" value="3"><span
+                                    class="rating-circle">3</span></label>
+                            <label class="rating-option"><input type="radio" name="q10_rating" value="4"><span
+                                    class="rating-circle">4</span></label>
+                            <label class="rating-option"><input type="radio" name="q10_rating" value="5"><span
+                                    class="rating-circle">5</span></label>
                         </div>
-                        <div class="rating-labels"><span>Совсем не понравилось</span><span>Очень понравилось</span></div>
+                        <div class="rating-labels"><span>Совсем не понравилось</span><span>Очень понравилось</span>
+                        </div>
                     </div>
 
                     <div class="question-block">
                         <label class="question-label">Комментарий <span class="optional">(по желанию)</span></label>
-                        <textarea name="q10_comment" class="text-area" placeholder="Что именно понравилось или не понравилось в новой версии..."></textarea>
+                        <textarea name="q10_comment" class="text-area"
+                            placeholder="Что именно понравилось или не понравилось в новой версии..."></textarea>
                     </div>
                 </div>
             </div>
@@ -662,7 +724,8 @@
                     </div>
 
                     <div class="question-block">
-                        <label class="question-label">Смотрели ли вы советские мультфильмы о Чебурашке и Крокодиле Гене?</label>
+                        <label class="question-label">Смотрели ли вы советские мультфильмы о Чебурашке и Крокодиле
+                            Гене?</label>
                         <div class="radio-group" data-required="true" data-name="q11_old">
                             <label class="radio-option">
                                 <input type="radio" name="q11_old" value="Да, хорошо помню">
@@ -699,7 +762,8 @@
                     </div>
 
                     <div class="question-block">
-                        <label class="question-label">Если вы смотрели обе версии, что вам понравилось больше и почему?</label>
+                        <label class="question-label">Если вы смотрели обе версии, что вам понравилось больше и
+                            почему?</label>
                         <div class="radio-group" data-required="true" data-name="q11_prefer">
                             <label class="radio-option">
                                 <input type="radio" name="q11_prefer" value="Советская версия">
@@ -727,18 +791,25 @@
                     <div class="question-block">
                         <label class="question-label">Оцените впечатление от нового фильма (2023):</label>
                         <div class="rating-group" data-required="true" data-name="q11_rating">
-                            <label class="rating-option"><input type="radio" name="q11_rating" value="1"><span class="rating-circle">1</span></label>
-                            <label class="rating-option"><input type="radio" name="q11_rating" value="2"><span class="rating-circle">2</span></label>
-                            <label class="rating-option"><input type="radio" name="q11_rating" value="3"><span class="rating-circle">3</span></label>
-                            <label class="rating-option"><input type="radio" name="q11_rating" value="4"><span class="rating-circle">4</span></label>
-                            <label class="rating-option"><input type="radio" name="q11_rating" value="5"><span class="rating-circle">5</span></label>
+                            <label class="rating-option"><input type="radio" name="q11_rating" value="1"><span
+                                    class="rating-circle">1</span></label>
+                            <label class="rating-option"><input type="radio" name="q11_rating" value="2"><span
+                                    class="rating-circle">2</span></label>
+                            <label class="rating-option"><input type="radio" name="q11_rating" value="3"><span
+                                    class="rating-circle">3</span></label>
+                            <label class="rating-option"><input type="radio" name="q11_rating" value="4"><span
+                                    class="rating-circle">4</span></label>
+                            <label class="rating-option"><input type="radio" name="q11_rating" value="5"><span
+                                    class="rating-circle">5</span></label>
                         </div>
-                        <div class="rating-labels"><span>Совсем не понравилось</span><span>Очень понравилось</span></div>
+                        <div class="rating-labels"><span>Совсем не понравилось</span><span>Очень понравилось</span>
+                        </div>
                     </div>
 
                     <div class="question-block">
                         <label class="question-label">Комментарий <span class="optional">(по желанию)</span></label>
-                        <textarea name="q11_comment" class="text-area" placeholder="Что именно понравилось или не понравилось в новой версии..."></textarea>
+                        <textarea name="q11_comment" class="text-area"
+                            placeholder="Что именно понравилось или не понравилось в новой версии..."></textarea>
                     </div>
                 </div>
             </div>
@@ -753,7 +824,8 @@
                     </div>
 
                     <div class="question-block">
-                        <label class="question-label">Смотрели ли вы советский фильм «Иван Васильевич меняет профессию» (1973)?</label>
+                        <label class="question-label">Смотрели ли вы советский фильм «Иван Васильевич меняет профессию»
+                            (1973)?</label>
                         <div class="radio-group" data-required="true" data-name="q12_old">
                             <label class="radio-option">
                                 <input type="radio" name="q12_old" value="Да, хорошо помню">
@@ -774,7 +846,8 @@
                     </div>
 
                     <div class="question-block">
-                        <label class="question-label">Смотрели ли вы новую версию «Иван Васильевич меняет всё» (2023)?</label>
+                        <label class="question-label">Смотрели ли вы новую версию «Иван Васильевич меняет всё»
+                            (2023)?</label>
                         <div class="radio-group" data-required="true" data-name="q12_new">
                             <label class="radio-option">
                                 <input type="radio" name="q12_new" value="Да">
@@ -790,7 +863,8 @@
                     </div>
 
                     <div class="question-block">
-                        <label class="question-label">Если вы смотрели обе версии, что вам понравилось больше и почему?</label>
+                        <label class="question-label">Если вы смотрели обе версии, что вам понравилось больше и
+                            почему?</label>
                         <div class="radio-group" data-required="true" data-name="q12_prefer">
                             <label class="radio-option">
                                 <input type="radio" name="q12_prefer" value="Советская версия">
@@ -818,18 +892,25 @@
                     <div class="question-block">
                         <label class="question-label">Оцените впечатление от новой версии (2023):</label>
                         <div class="rating-group" data-required="true" data-name="q12_rating">
-                            <label class="rating-option"><input type="radio" name="q12_rating" value="1"><span class="rating-circle">1</span></label>
-                            <label class="rating-option"><input type="radio" name="q12_rating" value="2"><span class="rating-circle">2</span></label>
-                            <label class="rating-option"><input type="radio" name="q12_rating" value="3"><span class="rating-circle">3</span></label>
-                            <label class="rating-option"><input type="radio" name="q12_rating" value="4"><span class="rating-circle">4</span></label>
-                            <label class="rating-option"><input type="radio" name="q12_rating" value="5"><span class="rating-circle">5</span></label>
+                            <label class="rating-option"><input type="radio" name="q12_rating" value="1"><span
+                                    class="rating-circle">1</span></label>
+                            <label class="rating-option"><input type="radio" name="q12_rating" value="2"><span
+                                    class="rating-circle">2</span></label>
+                            <label class="rating-option"><input type="radio" name="q12_rating" value="3"><span
+                                    class="rating-circle">3</span></label>
+                            <label class="rating-option"><input type="radio" name="q12_rating" value="4"><span
+                                    class="rating-circle">4</span></label>
+                            <label class="rating-option"><input type="radio" name="q12_rating" value="5"><span
+                                    class="rating-circle">5</span></label>
                         </div>
-                        <div class="rating-labels"><span>Совсем не понравилось</span><span>Очень понравилось</span></div>
+                        <div class="rating-labels"><span>Совсем не понравилось</span><span>Очень понравилось</span>
+                        </div>
                     </div>
 
                     <div class="question-block">
                         <label class="question-label">Комментарий <span class="optional">(по желанию)</span></label>
-                        <textarea name="q12_comment" class="text-area" placeholder="Что именно понравилось или не понравилось в новой версии..."></textarea>
+                        <textarea name="q12_comment" class="text-area"
+                            placeholder="Что именно понравилось или не понравилось в новой версии..."></textarea>
                     </div>
                 </div>
             </div>
@@ -844,11 +925,13 @@
 
                     <!-- Q13 -->
                     <div class="question-block">
-                        <label class="question-label">13. Какие основные отличия вы заметили между старыми и новыми экранизациями в целом?</label>
+                        <label class="question-label">13. Какие основные отличия вы заметили между старыми и новыми
+                            экранизациями в целом?</label>
                         <p class="question-hint">Выберите все подходящие варианты</p>
                         <div class="checkbox-group" data-required="true" data-name="q13_differences">
                             <label class="checkbox-option">
-                                <input type="checkbox" name="q13_differences" value="Визуальный стиль, графика, спецэффекты">
+                                <input type="checkbox" name="q13_differences"
+                                    value="Визуальный стиль, графика, спецэффекты">
                                 <span class="checkbox-custom"></span>
                                 <span class="checkbox-text">Визуальный стиль, графика, спецэффекты</span>
                             </label>
@@ -858,7 +941,8 @@
                                 <span class="checkbox-text">Актерская игра, типажи персонажей</span>
                             </label>
                             <label class="checkbox-option">
-                                <input type="checkbox" name="q13_differences" value="Сюжетные линии, изменения в сценарии">
+                                <input type="checkbox" name="q13_differences"
+                                    value="Сюжетные линии, изменения в сценарии">
                                 <span class="checkbox-custom"></span>
                                 <span class="checkbox-text">Сюжетные линии, изменения в сценарии</span>
                             </label>
@@ -893,7 +977,8 @@
 
                     <!-- Q14 -->
                     <div class="question-block">
-                        <label class="question-label">14. Как вы думаете, новые экранизации пытаются донести до зрителя те же ценности, что и оригиналы, или предлагают что‑то новое?</label>
+                        <label class="question-label">14. Как вы думаете, новые экранизации пытаются донести до зрителя
+                            те же ценности, что и оригиналы, или предлагают что‑то новое?</label>
                         <div class="radio-group" data-required="true" data-name="q14_values">
                             <label class="radio-option">
                                 <input type="radio" name="q14_values" value="В основном те же ценности">
@@ -903,7 +988,8 @@
                             <label class="radio-option">
                                 <input type="radio" name="q14_values" value="Новые ценности">
                                 <span class="radio-custom"></span>
-                                <span class="radio-text">Пытаются донести новые ценности, актуальные для нашего времени</span>
+                                <span class="radio-text">Пытаются донести новые ценности, актуальные для нашего
+                                    времени</span>
                             </label>
                             <label class="radio-option">
                                 <input type="radio" name="q14_values" value="Ценности изменились не в лучшую сторону">
@@ -925,7 +1011,8 @@
                 <div class="step-card thank-you-card">
                     <div class="thank-you-icon">✨</div>
                     <h2>Спасибо за участие!</h2>
-                    <p class="thank-you-text">Ваши ответы были успешно отправлены. Они помогут нашему исследованию о советском кино и его современных переосмыслениях.</p>
+                    <p class="thank-you-text">Ваши ответы были успешно отправлены. Они помогут нашему исследованию о
+                        советском кино и его современных переосмыслениях.</p>
                     <div class="thank-you-decoration">🎬🎥🎞️</div>
                 </div>
             </div>
@@ -940,7 +1027,8 @@
                     Далее
                     <span class="btn-arrow">→</span>
                 </button>
-                <button type="button" class="btn btn-submit" id="btnSubmit" onclick="submitForm()" style="display:none;">
+                <button type="button" class="btn btn-submit" id="btnSubmit" onclick="submitForm()"
+                    style="display:none;">
                     Отправить ответы
                     <span class="btn-arrow">✓</span>
                 </button>
@@ -956,4 +1044,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
