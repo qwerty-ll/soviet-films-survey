@@ -132,6 +132,15 @@ function doPost(e) {
     } else {
       rowRange.setBackground('#ffffff');
     }
+
+    // АВТО-ОБНОВЛЕНИЕ ГРАФИКОВ (опционально, может замедлять ответ на 1-2 сек)
+    try {
+      if (typeof generateFullDashboard === 'function') {
+        generateFullDashboard(true); // true = запуск без всплывающих окон
+      }
+    } catch (e) {
+      console.log('Ошибка авто-обновления графиков: ' + e.message);
+    }
     
     return ContentService
       .createTextOutput(JSON.stringify({ status: 'success', row: responseNumber }))

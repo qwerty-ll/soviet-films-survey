@@ -21,8 +21,10 @@ function onOpen() {
 
 /**
  * Основная функция генерации дашборда
+ * @param {boolean} isSilent - если true, не показывать алерты (для запуска в фоне)
  */
-function generateFullDashboard() {
+function generateFullDashboard(isSilent) {
+  isSilent = isSilent === true; // гарантия типа boolean
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var dataSheet = ss.getSheets()[0];
   var dashName = 'Полный Отчет';
@@ -98,7 +100,7 @@ function generateFullDashboard() {
 
   // ОБРАБОТКА ВОПРОСОВ
   headers.forEach((header, idx) => {
-    // Пропускаем технические поля
+    // Пропускаем технические поля (№ ответа, дата и время)
     if (idx < 2 || header.includes('комментарий') || header.includes('Другое')) return;
 
     var counts = {};
@@ -142,5 +144,9 @@ function generateFullDashboard() {
   dash.hideColumns(27, 2); 
   
   dash.autoResizeColumns(1, 5);
-  SpreadsheetApp.getUi().alert('🚀 Полный отчет готов! Создано графиков: ' + chartCount + '\nПроверьте лист "Полный Отчет".');
+  
+  // Если запуск не "тихий" (через меню), то показываем уведомление
+  if (!isSilent) {
+    SpreadsheetApp.getUi().alert('🚀 Полный отчет готов! Создано графиков: ' + chartCount + '\nПроверьте лист "Полный Отчет".');
+  }
 }
