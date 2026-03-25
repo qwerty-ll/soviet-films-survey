@@ -104,6 +104,19 @@ function updateProgress() {
     const progress = ((currentStep) / (TOTAL_STEPS - 1)) * 100;
     progressFill.style.width = `${progress}%`;
     progressText.textContent = `${currentStep} / ${TOTAL_STEPS - 1}`;
+
+    // Update global blurred background
+    const currentEl = steps[currentStep];
+    const pageBgBlur = document.getElementById('pageBgBlur');
+    if (pageBgBlur) {
+        if (currentEl.querySelector('.step-card-film')?.hasAttribute('data-bg')) {
+            const bgSrc = currentEl.querySelector('.step-card-film').getAttribute('data-bg');
+            pageBgBlur.style.backgroundImage = `url('${bgSrc}')`;
+            pageBgBlur.style.opacity = '0.35';
+        } else {
+            pageBgBlur.style.opacity = '0';
+        }
+    }
 }
 
 // ===== Conditional Logic for Film Questions =====

@@ -9,11 +9,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=5">
+    <link rel="stylesheet" href="style.css?v=5">
 </head>
 
 <body>
+    <div class="page-bg-blur" id="pageBgBlur"></div>
     <div class="bg-glow bg-glow-1"></div>
     <div class="bg-glow bg-glow-2"></div>
 
@@ -212,13 +213,14 @@
 
             <!-- ===== STEP 2: А зори здесь тихие ===== -->
             <div class="step" data-step="2">
-                <div class="step-card step-card-film">
-                    <div class="card-bg-blur" style="background-image: url('assets/AZoriZdes.webp');"></div>
-                    <div class="step-image-cover" style="background-image: url('assets/AZoriZdes.webp');"></div>
+                <div class="step-card step-card-film" data-bg="assets/AZoriZdes.webp">
                     <div class="step-header">
-                        <span class="step-badge">Часть 2 — Фильм</span>
-                        <h2>«А зори здесь тихие...»</h2>
-                        <p class="step-subtitle">Советская версия (1972) → Новая экранизация (2015)</p>
+                        <div class="header-poster" style="background-image: url('assets/AZoriZdes.webp');"></div>
+                        <div class="header-content">
+                            <span class="step-badge">Часть 2 — Фильм</span>
+                            <h2>«А зори здесь тихие...»</h2>
+                            <p class="step-subtitle">Советская версия (1972) → Новая экранизация (2015)</p>
+                        </div>
                     </div>
 
                     <div class="question-block">
@@ -315,13 +317,14 @@
 
             <!-- ===== STEP 3: Мастер и Маргарита ===== -->
             <div class="step" data-step="3">
-                <div class="step-card step-card-film">
-                    <div class="card-bg-blur" style="background-image: url('assets/MasterAndMargarite.jpg');"></div>
-                    <div class="step-image-cover" style="background-image: url('assets/MasterAndMargarite.jpg');"></div>
+                <div class="step-card step-card-film" data-bg="assets/MasterAndMargarite.jpg">
                     <div class="step-header">
-                        <span class="step-badge">Часть 3 — Фильм</span>
-                        <h2>«Мастер и Маргарита»</h2>
-                        <p class="step-subtitle">Советские экранизации (Кара / Бортко) → Новая экранизация (2024)</p>
+                        <div class="header-poster" style="background-image: url('assets/MasterAndMargarite.jpg');"></div>
+                        <div class="header-content">
+                            <span class="step-badge">Часть 3 — Фильм</span>
+                            <h2>«Мастер и Маргарита»</h2>
+                            <p class="step-subtitle">Советские экранизации (Кара / Бортко) → Новая экранизация (2024)</p>
+                        </div>
                     </div>
 
                     <div class="question-block">
@@ -419,14 +422,14 @@
 
             <!-- ===== STEP 4: Москва слезам не верит ===== -->
             <div class="step" data-step="4">
-                <div class="step-card step-card-film">
-                    <div class="card-bg-blur" style="background-image: url('assets/Moskva.jpg');"></div>
-                    <div class="step-image-cover" style="background-image: url('assets/Moskva.jpg');"></div>
+                <div class="step-card step-card-film" data-bg="assets/Moskva.jpg">
                     <div class="step-header">
-                        <span class="step-badge">Часть 4 — Фильм</span>
-                        <h2>«Москва слезам не верит»</h2>
-                        <p class="step-subtitle">Советская версия (1979) → «Москва слезам не верит. Все только
-                            начинается» (2023)</p>
+                        <div class="header-poster" style="background-image: url('assets/Moskva.jpg');"></div>
+                        <div class="header-content">
+                            <span class="step-badge">Часть 4 — Фильм</span>
+                            <h2>«Москва слезам не верит»</h2>
+                            <p class="step-subtitle">Советская версия (1979) → «Москва слезам не верит. Все только начинается» (2023)</p>
+                        </div>
                     </div>
 
                     <div class="question-block">
@@ -523,13 +526,14 @@
 
             <!-- ===== STEP 5: Ну, погоди! ===== -->
             <div class="step" data-step="5">
-                <div class="step-card step-card-film">
-                    <div class="card-bg-blur" style="background-image: url('assets/NuPogodi.jpg');"></div>
-                    <div class="step-image-cover" style="background-image: url('assets/NuPogodi.jpg');"></div>
+                <div class="step-card step-card-film" data-bg="assets/NuPogodi.jpg">
                     <div class="step-header">
-                        <span class="step-badge">Часть 5 — Мультфильм</span>
-                        <h2>«Ну, погоди!»</h2>
-                        <p class="step-subtitle">Советские выпуски → «Ну, погоди! Каникулы» (2021–2022)</p>
+                        <div class="header-poster" style="background-image: url('assets/NuPogodi.jpg');"></div>
+                        <div class="header-content">
+                            <span class="step-badge">Часть 5 — Мультфильм</span>
+                            <h2>«Ну, погоди!»</h2>
+                            <p class="step-subtitle">Советские выпуски → «Ну, погоди! Каникулы» (2021–2022)</p>
+                        </div>
                     </div>
 
                     <div class="question-block">
@@ -626,13 +630,14 @@
 
             <!-- ===== STEP 6: Простоквашино ===== -->
             <div class="step" data-step="6">
-                <div class="step-card step-card-film">
-                    <div class="card-bg-blur" style="background-image: url('assets/Prostokvashino.jpeg');"></div>
-                    <div class="step-image-cover" style="background-image: url('assets/Prostokvashino.jpeg');"></div>
+                <div class="step-card step-card-film" data-bg="assets/Prostokvashino.jpeg">
                     <div class="step-header">
-                        <span class="step-badge">Часть 6 — Мультфильм</span>
-                        <h2>«Простоквашино»</h2>
-                        <p class="step-subtitle">Советские мультфильмы → Новое «Простоквашино» (2018–2023)</p>
+                        <div class="header-poster" style="background-image: url('assets/Prostokvashino.jpeg');"></div>
+                        <div class="header-content">
+                            <span class="step-badge">Часть 6 — Мультфильм</span>
+                            <h2>«Простоквашино»</h2>
+                            <p class="step-subtitle">Советские мультфильмы → Новое «Простоквашино» (2018–2023)</p>
+                        </div>
                     </div>
 
                     <div class="question-block">
@@ -727,13 +732,14 @@
 
             <!-- ===== STEP 7: Чебурашка ===== -->
             <div class="step" data-step="7">
-                <div class="step-card step-card-film">
-                    <div class="card-bg-blur" style="background-image: url('assets/Cheburashka.jpg');"></div>
-                    <div class="step-image-cover" style="background-image: url('assets/Cheburashka.jpg');"></div>
+                <div class="step-card step-card-film" data-bg="assets/Cheburashka.jpg">
                     <div class="step-header">
-                        <span class="step-badge">Часть 7 — Мультфильм / Фильм</span>
-                        <h2>«Чебурашка»</h2>
-                        <p class="step-subtitle">Советские мультфильмы → Новый фильм «Чебурашка» (2023)</p>
+                        <div class="header-poster" style="background-image: url('assets/Cheburashka.jpg');"></div>
+                        <div class="header-content">
+                            <span class="step-badge">Часть 7 — Мультфильм / Фильм</span>
+                            <h2>«Чебурашка»</h2>
+                            <p class="step-subtitle">Советские мультфильмы → Новый фильм «Чебурашка» (2023)</p>
+                        </div>
                     </div>
 
                     <div class="question-block">
@@ -829,13 +835,14 @@
 
             <!-- ===== STEP 8: Иван Васильевич ===== -->
             <div class="step" data-step="8">
-                <div class="step-card step-card-film">
-                    <div class="card-bg-blur" style="background-image: url('assets/IvanVasili.jpg');"></div>
-                    <div class="step-image-cover" style="background-image: url('assets/IvanVasili.jpg');"></div>
+                <div class="step-card step-card-film" data-bg="assets/IvanVasili.jpg">
                     <div class="step-header">
-                        <span class="step-badge">Часть 8 — Фильм</span>
-                        <h2>«Иван Васильевич меняет профессию»</h2>
-                        <p class="step-subtitle">Советский фильм (1973) → «Иван Васильевич меняет всё» (2023)</p>
+                        <div class="header-poster" style="background-image: url('assets/IvanVasili.jpg');"></div>
+                        <div class="header-content">
+                            <span class="step-badge">Часть 8 — Фильм</span>
+                            <h2>«Иван Васильевич меняет профессию»</h2>
+                            <p class="step-subtitle">Советский фильм (1973) → «Иван Васильевич меняет всё» (2023)</p>
+                        </div>
                     </div>
 
                     <div class="question-block">
@@ -1057,7 +1064,7 @@
         <p>Отправляем ваши ответы...</p>
     </div>
 
-    <script src="script.js?v=4"></script>
+    <script src="script.js?v=5"></script>
 </body>
 
 </html>
