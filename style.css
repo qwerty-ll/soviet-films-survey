@@ -194,7 +194,7 @@ body {
     height: 100vh;
     background-size: cover;
     background-position: center;
-    filter: blur(20px);
+    filter: blur(8px);
     opacity: 0;
     z-index: 0;
     transition: background-image 0.8s ease, opacity 0.8s ease;
@@ -211,14 +211,13 @@ body {
 }
 
 .header-poster {
-    width: 100px;
-    height: 140px;
-    border-radius: 12px;
-    background-size: cover;
+    width: 120px;
+    height: 170px;
+    border-radius: 8px;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
     flex-shrink: 0;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .header-content {
@@ -234,8 +233,8 @@ body {
     }
     
     .header-poster {
-        width: 120px;
-        height: 170px;
+        width: 140px;
+        height: 190px;
     }
 }
 
