@@ -204,14 +204,70 @@ function initCheckboxLimits() {
     });
 }
 
+// ===== Column name mapping (field → readable header) =====
+const COLUMN_MAP = {
+    'q1_age':            '1. Ваш возраст',
+    'q2_watching':       '2. Смотрите ли советские фильмы?',
+    'q3_attitude':       '3. Отношение к ремейкам',
+    'q4_values':         '4. Ценности советского кино актуальны?',
+    'q5_purpose':        '5. Цель создания ремейков',
+    'q5_purpose_other':  '5. Другое (уточнение)',
+
+    'q6_old':      '6. «А зори здесь тихие» — советская версия',
+    'q6_new':      '6. «А зори здесь тихие» — новая версия',
+    'q6_prefer':   '6. «А зори здесь тихие» — что понравилось больше',
+    'q6_rating':   '6. «А зори здесь тихие» — оценка (1-5)',
+    'q6_comment':  '6. «А зори здесь тихие» — комментарий',
+
+    'q7_old':      '7. «Мастер и Маргарита» — советская версия',
+    'q7_new':      '7. «Мастер и Маргарита» — новая версия',
+    'q7_prefer':   '7. «Мастер и Маргарита» — что понравилось больше',
+    'q7_rating':   '7. «Мастер и Маргарита» — оценка (1-5)',
+    'q7_comment':  '7. «Мастер и Маргарита» — комментарий',
+
+    'q8_old':      '8. «Москва слезам не верит» — советская версия',
+    'q8_new':      '8. «Москва слезам не верит» — новая версия',
+    'q8_prefer':   '8. «Москва слезам не верит» — что понравилось больше',
+    'q8_rating':   '8. «Москва слезам не верит» — оценка (1-5)',
+    'q8_comment':  '8. «Москва слезам не верит» — комментарий',
+
+    'q9_old':      '9. «Ну, погоди!» — советская версия',
+    'q9_new':      '9. «Ну, погоди!» — новая версия',
+    'q9_prefer':   '9. «Ну, погоди!» — что понравилось больше',
+    'q9_rating':   '9. «Ну, погоди!» — оценка (1-5)',
+    'q9_comment':  '9. «Ну, погоди!» — комментарий',
+
+    'q10_old':     '10. «Простоквашино» — советская версия',
+    'q10_new':     '10. «Простоквашино» — новая версия',
+    'q10_prefer':  '10. «Простоквашино» — что понравилось больше',
+    'q10_rating':  '10. «Простоквашино» — оценка (1-5)',
+    'q10_comment': '10. «Простоквашино» — комментарий',
+
+    'q11_old':     '11. «Чебурашка» — советская версия',
+    'q11_new':     '11. «Чебурашка» — новая версия',
+    'q11_prefer':  '11. «Чебурашка» — что понравилось больше',
+    'q11_rating':  '11. «Чебурашка» — оценка (1-5)',
+    'q11_comment': '11. «Чебурашка» — комментарий',
+
+    'q12_old':     '12. «Иван Васильевич» — советская версия',
+    'q12_new':     '12. «Иван Васильевич» — новая версия',
+    'q12_prefer':  '12. «Иван Васильевич» — что понравилось больше',
+    'q12_rating':  '12. «Иван Васильевич» — оценка (1-5)',
+    'q12_comment': '12. «Иван Васильевич» — комментарий',
+
+    'q13_differences':  '13. Отличия старых и новых версий',
+    'q13_other':        '13. Другое (уточнение)',
+    'q14_values':       '14. Ценности в новых экранизациях',
+};
+
 // ===== Data Collection =====
 function collectFormData() {
-    const data = {};
+    const raw = {};
 
     // Collect all radio values
     const radios = form.querySelectorAll('input[type="radio"]:checked');
     radios.forEach(radio => {
-        data[radio.name] = radio.value;
+        raw[radio.name] = radio.value;
     });
 
     // Collect all checkbox values
@@ -221,18 +277,28 @@ function collectFormData() {
         checkboxGroups[cb.name].push(cb.value);
     });
     for (const [name, values] of Object.entries(checkboxGroups)) {
-        data[name] = values.join('; ');
+        raw[name] = values.join('; ');
     }
 
     // Collect text inputs and textareas
     form.querySelectorAll('textarea, input.inline-text').forEach(input => {
         if (input.value.trim()) {
-            data[input.name] = input.value.trim();
+            raw[input.name] = input.value.trim();
         }
     });
 
-    // Add timestamp
-    data['timestamp'] = new Date().toISOString();
+    // Map to readable column names
+    const data = {};
+    data['№ ответа'] = '';  // Will be set by Apps Script
+    data['Дата и время'] = new Date().toLocaleString('ru-RU', {
+        day: '2-digit', month: '2-digit', year: 'numeric',
+        hour: '2-digit', minute: '2-digit'
+    });
+
+    // Add all fields in order using readable names
+    for (const [fieldName, columnName] of Object.entries(COLUMN_MAP)) {
+        data[columnName] = raw[fieldName] || '';
+    }
 
     return data;
 }
